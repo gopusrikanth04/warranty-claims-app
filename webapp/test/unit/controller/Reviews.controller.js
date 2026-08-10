@@ -7,7 +7,7 @@ sap.ui.define([
 ], function(ReviewsController) {
 	"use strict";
 
-	QUnit.module("Reviews Controller - onHorizontalSwitchChange event handler", {
+	QUnit.module("webapp/test/unit/controller/Reviews.controller.js", {
 		beforeEach: function() {
 			this.getParameter = function() {
 				return true;
@@ -47,7 +47,7 @@ sap.ui.define([
 		}
 	});
 
-	QUnit.module("Reviews Controller - formatDateTime formatter", {
+	QUnit.module("webapp/test/unit/controller/Reviews.controller.js", {
 		beforeEach: function() {
 			this.oController = new ReviewsController();
 		},

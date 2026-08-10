@@ -9,7 +9,7 @@ sap.ui.define([
 ], function(StartpageController, MessageToast, ResourceBundle) {
 	"use strict";
 
-	QUnit.module("Launchpad Controller - formatJSONDate formatter", {
+	QUnit.module("webapp/test/unit/controller/Startpage.controller.js", {
 		beforeEach: function() {
 			this.oController = new StartpageController();
 		},
@@ -22,7 +22,7 @@ sap.ui.define([
 		assert.equal(this.oController.formatJSONDate("2016-12-06T00:00:00.000Z"), new Date("2016-12-06T00:00:00.000Z").toLocaleDateString(), "Formatted as local date string");
 	});
 
-	QUnit.module("Launchpad Controller - formatNumber formatter", {
+	QUnit.module("webapp/test/unit/controller/Startpage.controller.js", {
 		beforeEach: function() {
 			this.oController = new StartpageController();
 		},
@@ -31,7 +31,7 @@ sap.ui.define([
 		}
 	});
 
-	QUnit.module("Launchpad Controller - getProgress formatter", {
+	QUnit.module("webapp/test/unit/controller/Startpage.controller.js", {
 		beforeEach: function() {
 			this.oController = new StartpageController();
 		},
@@ -70,7 +70,7 @@ sap.ui.define([
 		assert.equal(oResult, 100, "100 is returned");
 	});
 
-	QUnit.module("Launchpad Controller - onInit hook", {
+	QUnit.module("webapp/test/unit/controller/Startpage.controller.js", {
 		beforeEach: function() {
 			this.oController = new StartpageController();
 		},
@@ -93,7 +93,7 @@ sap.ui.define([
 		}
 	});
 
-	QUnit.module("Launchpad Controller - getEntityCount formatter", {
+	QUnit.module("webapp/test/unit/controller/Startpage.controller.js", {
 		beforeEach: function() {
 			this.oController = new StartpageController();
 		},
@@ -110,7 +110,7 @@ sap.ui.define([
 		assert.equal(this.oController.getEntityCount(["TestData"]), 1);
 	});
 
-	QUnit.module("Launchpad Controller - onTilePressed event handler", {
+	QUnit.module("webapp/test/unit/controller/Startpage.controller.js", {
 		beforeEach: function() {
 			function getResourceBundle() {
 				return ResourceBundle.create({ url: "../i18n/i18n.properties", async: true });
