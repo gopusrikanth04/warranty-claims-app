@@ -17,7 +17,19 @@
     "eslint": "^10",
     "ui5-task-zipper": "^3.4.x",
     "rimraf": "^5.0.5",
-    "mbt": "^1.2.29"
+    "mbt": "^1.2.29",
+    "karma": "^4.4.1",
+    "karma-browserify": "^8.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.2",
+    "karma-junit-reporter": "^2.0.1",
+    "karma-mocha": "^2.0.1",
+    "karma-qunit": "^4.2.1",
+    "karma-ui5": "^2.4.0",
+    "karma-webdriver-launcher": "^1.0.8",
+    "karma-sonarqube-unit-reporter": "^0.0.23",
+    "mocha": "^11.7.5",
+    "qunit": "^2.25.0"
   },
   "scripts": {
     "start": "fiori run --open \"test/flp.html#app-preview\"",
@@ -39,6 +51,7 @@
     "deploy:cf-dev": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/dev.mtaext",
     "deploy:cf-qa": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/qa.mtaext",
     "deploy:cf-prod": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/prod.mtaext"
+    "karma:test":"karma start"
   },
   "sapuxLayer": "CUSTOMER_BASE"
 }
