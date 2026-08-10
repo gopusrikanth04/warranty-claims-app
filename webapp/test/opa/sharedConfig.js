@@ -1,7 +1,8 @@
-sap.ui.define("sap.suite.ui.commons.demokit.icecream.test.opa.sharedConfig", [
-	"sap/ui/test/Opa5",
-	"sap/ui/test/matchers/Properties"
-], function(Opa5, PropertiesMatcher) {
+sap.ui.define([
+    "sap/ui/test/Opa5",
+    "sap/ui/test/matchers/Properties"
+], function (Opa5, PropertiesMatcher) {
+    "use strict";
 	return {
 		arrangements: {
 			iStartMyApp: function() {

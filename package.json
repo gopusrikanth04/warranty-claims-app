@@ -50,8 +50,8 @@
     "deploy:cf": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar",
     "deploy:cf-dev": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/dev.mtaext",
     "deploy:cf-qa": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/qa.mtaext",
-    "deploy:cf-prod": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/prod.mtaext"
-    "karma:test":"karma start"
+    "deploy:cf-prod": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/prod.mtaext",
+    "karma:test": "karma start"
   },
   "sapuxLayer": "CUSTOMER_BASE"
 }

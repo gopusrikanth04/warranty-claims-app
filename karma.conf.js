@@ -1,18 +1,18 @@
 const os = require('os');
 const fs = require('fs');
 const path = require('path');
- 
+
 module.exports = function(config) {
   "use strict";
- 
+
   const networkInterfaces = os.networkInterfaces();
   const containerIp = Object.values(networkInterfaces)
     .flat()
     .find(i => i.family === 'IPv4' && !i.internal)?.address || 'localhost';
- 
+
   config.set({
     frameworks: ['ui5', 'qunit'],
- 
+
     ui5: {
       url: "https://sapui5.hana.ondemand.com/1.120.47",
       mode: "script",
@@ -27,19 +27,19 @@ module.exports = function(config) {
         "sap/suite/ui/commons/demo/tutorial/test/opa/AllJourneys"
       ]
     },
- 
+
     // files: [
     //   { pattern: 'webapp/**', served: true, included: false, watched: true }
     // ],
- 
+
     preprocessors: {
       // Only instrument source code — NOT test files — for accurate coverage
       'webapp/!(test)/**/*.js': ['coverage']
     },
- 
+
     // Adjusted to remove 'sonarGeneric' reporter
     reporters: ['progress', 'coverage', 'junit', 'sonarqubeUnit'],
- 
+
     coverageReporter: {
       dir: 'reports',
       reporters: [
@@ -48,7 +48,7 @@ module.exports = function(config) {
         { type: 'text-summary' }
       ]
     },
- 
+
     sonarQubeUnitReporter: {
     sonarQubeVersion: "LATEST",
     outputFile: "reports/Test-execution.xml",
@@ -57,22 +57,22 @@ module.exports = function(config) {
     port: 9876,
     hostname: containerIp,
     listenAddress: '0.0.0.0',
- 
+
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
- 
+
     // CRITICAL: false so karma exits with code 0 even when tests fail.
     // This prevents Jenkins from treating test failures as build failures.
     singleRun: true,
     failOnEmptyTestSuite: false,
- 
+
     // For Local --> Headless Browser => browsers: ['ChromeHeadless'],
     // For Local --> With Browser => browsers: ['Chrome'],
- 
+
     //browsers: ['Chrome'],
     browsers: ['SeleniumChrome'],
- 
+
     customLaunchers: {
       SeleniumChrome: {
         base: 'WebDriver',
@@ -86,12 +86,12 @@ module.exports = function(config) {
         pseudoActivityInterval: 30000
       }
     },
- 
+
     captureTimeout: 210000,
     browserDisconnectTimeout: 210000,
     browserDisconnectTolerance: 3,
     browserNoActivityTimeout: 210000,
- 
+
     plugins: [
       'karma-ui5',
       'karma-qunit',
@@ -103,7 +103,7 @@ module.exports = function(config) {
       'karma-webdriver-launcher',
       'karma-sonarqube-unit-reporter'
     ],
- 
+
     concurrency: 1,
     forceJSONP: false,
     browserConsoleLogOptions: { level: 'debug', terminal: true }, logLevel: config.LOG_DEBUG

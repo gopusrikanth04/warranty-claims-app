@@ -9,7 +9,7 @@ sap.ui.define([
 ], function(ProcessFlowController, MessageToast, ResourceBundle) {
 	"use strict";
 
-	QUnit.module("ProcessFlow Controller - getValuesDelta formatter", {
+	QUnit.module("webapp/test/unit/controller/ProcessFlow.controller.js", {
 		beforeEach: function() {
 			this.oController = new ProcessFlowController();
 		},
@@ -23,7 +23,7 @@ sap.ui.define([
 		assert.equal(sResult, "-2", "Correct string returned");
 	});
 
-	QUnit.module("ProcessFlow Controller - onNodePressed event handler", {
+	QUnit.module("webapp/test/unit/controller/ProcessFlow.controller.js", {
 		beforeEach: function() {
 			function getResourceBundle() {
 				return ResourceBundle.create({ url: "../i18n/i18n.properties", async: true });
